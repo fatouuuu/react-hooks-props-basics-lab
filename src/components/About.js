@@ -1,12 +1,15 @@
 import React from "react";
+import Links from './Links';
 
-function About() {
+//use the && operator to check if the prop bio is truthy, if it is, it will get rendered
+//if not, it won't 
+function About(props) {
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      {props.bio && <p>{props.bio}</p>}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      <Links github={props.github} linkedin={props.linkedin} />
     </div>
   );
 }
